@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         getSignalButton.textContent = "Следующий сигнал возможен через 5 минут!"
         getSignalButton.classList.add('disabled');
         setTimeout(() => {
-            button.classList.remove('disabled');
+            getSignalButton.classList.remove('disabled');
             getSignalButton.disabled = false;
             getSignalButton.textContent = 'Получить сигнал';
         }, 300000);
