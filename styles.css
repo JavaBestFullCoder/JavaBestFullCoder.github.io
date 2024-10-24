@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #121212; /* Темный фон */
+    color: #e0e0e0; /* Светлый текст */
+}
+
+.loader {
+    font-size: 24px;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.outer-circle {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #0000ff; /* Синий круг */
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto 10px;
+}
+
+.inner-circle {
+    width: 20px;
+    height: 20px;
+    background-color: #00ff00; /* Зеленый круг */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.container {
+    text-align: center;
+    background: #1e1e1e; /* Темный фон контейнера */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+select, button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333; /* Темный фон элементов */
+    color: #e0e0e0; /* Светлый текст элементов */
+    border: 1px solid #444; /* Темная граница */
+    border-radius: 4px;
+}
+
+select:focus, button:focus {
+    outline: none;
+    border-color: #6200ea; /* Фиолетовая граница при фокусе */
+}
+
+#signalText {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+#typeText {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+#timeText {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+button:hover {
+    background-color: #6200ea; /* Фиолетовый фон при наведении */
+    cursor: pointer;
+}
