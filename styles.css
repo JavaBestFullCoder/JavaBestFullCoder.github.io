@@ -37,8 +37,12 @@ body {
 }
 
 @keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 .container {
@@ -47,6 +51,11 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.disabled {
+    pointer-events: none; /* Отключает все события мыши */
+    opacity: 0.5; /* Делает кнопку полупрозрачной */
 }
 
 select, button {

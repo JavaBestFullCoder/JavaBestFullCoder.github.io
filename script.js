@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2000); // Задержка 2 секунды для имитации загрузки
 
     // Данные для добавления в раскрывающийся список
-    const data = ['Опция 1', 'Опция 2', 'Опция 3', 'Опция 4'];
+    const data = ['Cardano OTC', 'Bitcoin ETF OTC', 'Bitcoin OTC', 'Dogecoin OTC',
+        'Chainlink OTC', 'Solana OTC', 'Toncoin OTC', 'Ripple OTC', 'Avalanche OTC',
+        'Ethereum OTC', 'Polygon OTC', 'BNB OTC', 'TRON OTC'];
 
     // Заполнение раскрывающегося списка
     data.forEach(item => {
@@ -29,6 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const randomValue = Math.floor(Math.random() * 56) + 40; // Генерация числа от 40 до 95
         signalText.textContent = `Успешность: ${randomValue}%`;
         signalText.style.color = randomValue < 60 ? 'red' : 'green';
+        const randomValue1 = Math.floor(Math.random() * 10);
+        var type = "LONG"
+        if (randomValue1 < 5) {
+            type = "SHORT"
+        }
+        typeText.textContent = `Тип: ${type}`
+        timeText.textContent = "Время: Expiration time + 3 min"
+
+        getSignalButton.disabled = true
+        getSignalButton.textContent = "Следующий сигнал возможен через 5 минут!"
+        getSignalButton.classList.add('disabled');
+        setTimeout(() => {
+            button.classList.remove('disabled');
+            getSignalButton.disabled = false;
+            getSignalButton.textContent = 'Получить сигнал';
+        }, 300000);
     });
 });
 
